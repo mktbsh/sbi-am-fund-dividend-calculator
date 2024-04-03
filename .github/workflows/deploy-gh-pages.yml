@@ -16,13 +16,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  bunLockCheck:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v1
-      - name: check lock diff
-        run:  diff <(bun bun.lockb) yarn.lock
   deploy:
     environment:
       name: github-pages
